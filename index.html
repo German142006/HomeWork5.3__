@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS в HTML</title>
+</head>
+
+<body>
+
+  <script>
+
+// Запрашиваем у пользователя число N
+let N = parseInt(prompt("Введите целое число N:"));
+
+// Проверяем введенное значение на корректность
+if (isNaN(N)) {
+    console.log("Введите корректное целое число.");
+} else {
+    // Переменная для накопления результата
+    let result = "";
+
+    // Проходимся по всем числам от 1 до 100
+    for (let i = 1; i <= 100; i++) {
+        // Вычисляем квадрат текущего числа
+        let square = i * i;
+
+        // Проверяем, что квадрат не превышает N
+        if (square <= N) {
+            // Добавляем число в результат
+            result += i + " ";
+        } else {
+            // Если квадрат превышает N, прерываем цикл, так как дальше числа будут еще больше
+            break;
+        }
+    }
+
+    // Выводим результат
+    console.log("Числа, квадраты которых не превышают " + N + ": " + result);
+}
+
+  </script>
+
+</body>
+
+</html>
